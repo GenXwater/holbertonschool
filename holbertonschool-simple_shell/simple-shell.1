@@ -1,0 +1,87 @@
+.TH simple_shell 1 "August 2024" "1.0" "Simple Shell Manual"
+
+.SH NAME
+simple_shell \- A simple Unix shell implementation
+
+.SH SYNOPSIS
+.B simple_shell
+[OPTION]... 
+
+.SH DESCRIPTION
+.B simple_shell
+is a basic Unix shell implemented in C as part of the Holberton School curriculum. It provides a command-line interface where users can execute commands, manage environment variables, and navigate the file system.
+
+.SH FEATURES
+.IP \[bu] 2
+Execute system commands like \fBls\fP, \fBpwd\fP, \fBecho\fP, etc.
+.IP \[bu] 2
+Built-in commands:
+.RS 4
+.IP \[bu] 2
+\fBexit\fP \- Exit the shell.
+.IP \[bu] 2
+\fBprintenv\fP \- Display all environment variables.
+.IP \[bu] 2
+\fBsetenv\fP \- Set or modify an environment variable.
+.IP \[bu] 2
+\fBunsetenv\fP \- Remove an environment variable.
+.IP \[bu] 2
+\fBshowpath\fP \- Display the directories in the \fBPATH\fP variable.
+.IP \[bu] 2
+\fBman simple_shell\fP \- Display the manual page for this shell.
+.RE
+.IP \[bu] 2
+Environment variable management: Set, unset, and display environment variables.
+.IP \[bu] 2
+Command execution: Supports command execution with arguments and options.
+.IP \[bu] 2
+Process management: Handles process creation and waits for child processes to finish.
+.IP \[bu] 2
+Memory management: Properly allocates and frees memory to avoid leaks.
+
+.SH OPTIONS
+The \fBsimple_shell\fP does not take any options. Commands and arguments are entered interactively.
+
+.SH EXAMPLES
+To start the shell:
+.PP
+.EX
+$ ./hsh
+.EE
+To run a basic command:
+.PP
+.EX
+$ ls
+.EE
+To exit the shell:
+.PP
+.EX
+$ exit
+.EE
+To set an environment variable:
+.PP
+.EX
+$ setenv MYVAR "HelloWorld"
+.EE
+To print environment variables:
+.PP
+.EX
+$ printenv
+.EE
+To unset an environment variable:
+.PP
+.EX
+$ unsetenv MYVAR
+.EE
+
+.SH MEMORY MANAGEMENT
+This shell has been tested for memory leaks using Valgrind. All dynamic memory allocations are properly freed before the shell exits, ensuring that no memory leaks occur during execution.
+
+.SH SEE ALSO
+.BR sh (1),
+.BR bash (1)
+
+.SH AUTHOR
+.B Diarra, Evrade & GenXwater
+.SH LICENSE
+This project is open-source and available under the MIT License.
